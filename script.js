@@ -404,59 +404,29 @@ function saveAttendance(student) {
 ========================================= */
 
 async function loadStudents() {
-
     try {
-
-         const response =
-         const BASE_PATH = window.location.pathname
-             .replace(/\/[^\/]*$/, "/");
-      
-         const response = await fetch(
-                `${BASE_PATH}data/students.json`
-            );
-
+        const response = await fetch("data/students.json");
 
         if (!response.ok) {
-
-            throw new Error(
-                `HTTP ${response.status}`
-            );
-
+            throw new Error(`HTTP ${response.status}`);
         }
 
+        students = await response.json();
 
-        students =
-            await response.json();
-
-
-        console.log(
-            "Data siswa berhasil dimuat:",
-            students
-        );
-
+        console.log("DATA SISWA BERHASIL DIMUAT:", students);
 
         updateStudentTotal();
 
+    } catch (error) {
+        console.error("Gagal membaca students.json:", error);
 
-        statusText.textContent =
-            `Data siswa siap. ${students.length} siswa tersedia.`;
+        const statusElement = document.getElementById("status");
 
-
+        if (statusElement) {
+            statusElement.textContent =
+                "Gagal membaca data siswa.";
+        }
     }
-
-    catch (error) {
-
-        console.error(
-            "Gagal membaca students.json:",
-            error
-        );
-
-
-        statusText.textContent =
-            "❌ Gagal memuat data siswa.";
-
-    }
-
 }
 
 
