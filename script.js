@@ -408,8 +408,11 @@ async function loadStudents() {
     try {
 
         const response =
-            await fetch(
-                "data/students.json"
+           const BASE_PATH = window.location.pathname
+          .replace(/\/[^\/]*$/, "/");
+      
+            const response = await fetch(
+                `${BASE_PATH}data/students.json`
             );
 
 
