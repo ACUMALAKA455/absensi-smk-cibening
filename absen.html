@@ -1,0 +1,588 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Absensi SMK Cibening</title>
+
+    <link
+        rel="stylesheet"
+        href="stylesheet.css">
+
+    <script
+        src="https://unpkg.com/html5-qrcode"
+        type="text/javascript">
+    </script>
+
+</head>
+
+
+<body>
+
+
+ 
+
+    
+    <!-- =====================================
+        HEADER
+    ====================================== -->
+
+    <header class="header">
+
+        <div class="header-container">
+
+            <!-- IDENTITAS SEKOLAH -->
+
+            <div class="school-brand">
+
+                <div class="school-logo">
+
+                    <img
+                        src="assets/logo-cibening-transparent.png"
+                        alt="Logo SMK Cibening">
+
+                </div>
+
+
+                <div class="brand-divider"></div>
+
+                <div class="school-text">
+
+                    <div class="school-label animated-title">
+
+                        <span>S</span>
+                        <span>I</span>
+                        <span>S</span>
+                        <span>T</span>
+                        <span>E</span>
+                        <span>M</span>
+
+                        <span class="title-space"></span>
+
+                        <span>A</span>
+                        <span>B</span>
+                        <span>S</span>
+                        <span>E</span>
+                        <span>N</span>
+                        <span>S</span>
+                        <span>I</span>
+
+                    </div>
+
+
+                    <h1 class="school-name">
+
+                        <span>S</span>
+                        <span>M</span>
+                        <span>K</span>
+
+                        <span class="title-space"></span>
+
+                        <span>C</span>
+                        <span>I</span>
+                        <span>B</span>
+                        <span>E</span>
+                        <span>N</span>
+                        <span>I</span>
+                        <span>N</span>
+                        <span>G</span>
+
+                    </h1>
+
+                </div>
+                
+
+            </div>
+
+
+            <!-- JAM DINDING -->
+
+            <div class="clock-container">
+
+                <div class="analog-clock">
+
+                    <div class="clock-number number-12">12</div>
+                    <div class="clock-number number-1">1</div>
+                    <div class="clock-number number-2">2</div>
+                    <div class="clock-number number-3">3</div>
+                    <div class="clock-number number-4">4</div>
+                    <div class="clock-number number-5">5</div>
+                    <div class="clock-number number-6">6</div>
+                    <div class="clock-number number-7">7</div>
+                    <div class="clock-number number-8">8</div>
+                    <div class="clock-number number-9">9</div>
+                    <div class="clock-number number-10">10</div>
+                    <div class="clock-number number-11">11</div>
+
+                    <div class="clock-hand hour-hand"></div>
+
+                    <div class="clock-hand minute-hand"></div>
+
+                    <div class="clock-hand second-hand"></div>
+
+                    <div class="clock-center"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <main class="main">
+
+        <!-- =========================================
+            JUDUL HALAMAN
+        ========================================== -->
+
+        <section class="attendance-header">
+
+            <div>
+                <span class="section-label">
+                    SISTEM KEHADIRAN
+                </span>
+
+                <h2>
+                    Absensi Siswa
+                </h2>
+
+                <p>
+                    Scan kode QR siswa untuk mencatat kehadiran.
+                </p>
+            </div>
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+                <span>
+                    SISTEM AKTIF
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+            SCANNER + HASIL SCAN
+        ========================================== -->
+
+        <section class="scanner-result-layout">
+
+
+            <!-- SCANNER -->
+
+            <div class="scanner-card">
+
+                <div class="card-top">
+
+                    <div>
+
+                        <span class="card-label">
+                            SCANNER
+                        </span>
+
+                        <h3>
+                            Scan QR Siswa
+                        </h3>
+
+                    </div>
+
+                    <div class="scanner-status">
+                        READY
+                    </div>
+
+                </div>
+
+
+                <div class="scanner-area">
+
+                    <div class="scanner-frame">
+
+                        <div class="scanner-corner top-left"></div>
+                        <div class="scanner-corner top-right"></div>
+                        <div class="scanner-corner bottom-left"></div>
+                        <div class="scanner-corner bottom-right"></div>
+
+                        <div class="scanner-line"></div>
+
+                        <div id="qr-reader"></div>
+
+                    </div>
+
+                </div>
+
+
+                <p class="scanner-instruction">
+                    Arahkan kamera ke kode QR siswa
+                </p>
+
+
+                <button
+                    id="scanButton"
+                    class="scan-button"
+                    type="button"
+                >
+
+                    <span>📷</span>
+
+                    <span>
+                        SCAN QR
+                    </span>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- HASIL SCAN -->
+
+            <div class="result-card">
+
+                <div class="card-top">
+
+                    <div>
+
+                        <span class="card-label">
+                            HASIL PEMINDAIAN
+                        </span>
+
+                        <h3>
+                            Data Kehadiran
+                        </h3>
+
+                    </div>
+
+                    <div class="result-icon">
+                        ✓
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="hasilAbsensi"
+                    class="attendance-result"
+                >
+
+                    <div class="result-empty">
+
+                        <div class="empty-icon">
+                            QR
+                        </div>
+
+                        <h4>
+                            Belum Ada Data
+                        </h4>
+
+                        <p>
+                            Silakan scan QR siswa untuk
+                            menampilkan hasil absensi.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        id="status"
+                        class="result-status"
+                    >
+                        Data siswa sedang dimuat...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="student-data-card">
+
+            <div class="attendance-overview">
+
+                <div class="overview-card total">
+                    <div class="overview-icon">👥</div>
+                    <div class="overview-content">
+                        <span>TOTAL SISWA</span>
+                        <strong id="overviewTotal">0</strong>
+                    </div>
+                </div>
+
+
+                <div class="overview-card present">
+                    <div class="overview-icon">✓</div>
+                    <div class="overview-content">
+                        <span>HADIR</span>
+                        <strong id="presentCount">0</strong>
+                    </div>
+                </div>
+
+
+                <div class="overview-card absent">
+                    <div class="overview-icon">!</div>
+                    <div class="overview-content">
+                        <span>BELUM ABSEN</span>
+                        <strong id="absentCount">0</strong>
+                    </div>
+                </div>
+
+            </div>
+            
+            <section class="absent-students-panel">
+
+                <div class="absent-panel-header">
+
+                    <div>
+                        <span class="card-label">KEHADIRAN</span>
+
+                        <h3>Belum Absen Hari Ini</h3>
+
+                        <p>
+                            Daftar siswa yang belum melakukan absensi.
+                        </p>
+                    </div>
+
+                    <div class="absent-total">
+                        <strong id="absentListCount">0</strong>
+                        <span>SISWA</span>
+                    </div>
+
+                </div>
+
+
+                <div class="absent-list-wrapper">
+
+                    <table class="absent-table">
+
+                        <thead>
+                            <tr>
+                                <th>NO</th>
+                                <th>NIS</th>
+                                <th>NAMA SISWA</th>
+                                <th>KELAS</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="absentListBody">
+
+                            <tr>
+                                <td colspan="4" class="absent-loading">
+                                    Memuat daftar siswa...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div
+                    id="allPresentMessage"
+                    class="all-present-message"
+                    style="display: none;"
+                >
+
+                    <div class="all-present-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <strong>Semua siswa sudah hadir</strong>
+
+                        <p>
+                            Tidak ada siswa yang belum melakukan absensi hari ini.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="student-data-header">
+
+                <div>
+                    <span class="card-label">DATA SISWA</span>
+                    <h3>Database Siswa</h3>
+                    <p>Cari dan lihat data siswa berdasarkan kelas.</p>
+                </div>
+
+                <div class="student-total">
+                    <span>TOTAL SISWA</span>
+                    <strong id="totalStudents">0</strong>
+                </div>
+                
+            </div>
+
+
+            <!-- FILTER DATA SISWA -->
+            <div class="student-filter">
+
+                <div class="filter-group">
+
+                    <label for="classFilter">
+                        KELAS
+                    </label>
+
+                    <select id="classFilter">
+                        <option value="ALL">Semua Kelas</option>
+                        <option value="XII TKJ 1">XII TKJ 1</option>
+                        <option value="XII TKJ 2">XII TKJ 2</option>
+                        <option value="XII ACP">XII ACP</option>
+                        <option value="XII AKL">XII AKL</option>
+                        <option value="XII TSM">XII TSM</option>
+                    </select>
+
+                </div>
+
+
+                <div class="filter-group search-group">
+
+                    <label for="studentSearch">
+                        CARI SISWA
+                    </label>
+
+                    <div class="search-box">
+
+                        <span class="search-icon">⌕</span>
+
+                        <input
+                            type="text"
+                            id="studentSearch"
+                            placeholder="Cari nama atau NIS siswa..."
+                            autocomplete="off">
+
+                        <button
+                            type="button"
+                            id="clearSearch"
+                            class="clear-search">
+                            ×
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMASI HASIL -->
+            <div class="student-result-info">
+
+                <div>
+                    <span id="resultInfo">
+                        Menampilkan semua siswa
+                    </span>
+                </div>
+
+                <div class="student-result-count">
+                    <strong id="filteredCount">0</strong>
+                    <span>siswa</span>
+                </div>
+
+            </div>
+
+
+            <!-- DAFTAR SISWA -->
+            <div class="student-table-wrapper">
+
+                <table class="student-table">
+
+                    <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>NIS</th>
+                            <th>NAMA SISWA</th>
+                            <th>KELAS</th>
+                            <th>STATUS</th>
+                            <th>TANGGAL</th>
+                            <th>JAM</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTableBody">
+
+                        <tr>
+                            <td colspan="7" class="student-loading">
+                                Memuat data siswa...
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- TIDAK DITEMUKAN -->
+            <div
+                id="studentNotFound"
+                class="student-not-found"
+                style="display: none;">
+
+                <div class="not-found-icon">
+                    🔎
+                </div>
+
+                <h4>Siswa Tidak Ditemukan</h4>
+
+                <p>
+                    Tidak ada siswa yang sesuai dengan pencarian atau kelas yang dipilih.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 SMK Cibening
+        </p>
+
+        <span>
+            Sistem Absensi Digital
+        </span>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script
+        src="script.js">
+    </script>
+    <script src="absent.js"></script>
+
+
+</body>
+
+</html>

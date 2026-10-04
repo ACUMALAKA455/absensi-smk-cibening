@@ -1,0 +1,32 @@
+[
+    {
+        "nis": "12001",
+        "nama": "Ahmad",
+        "kelas": "XII TKJ 1"
+    },
+    {
+        "nis": "12002",
+        "nama": "Jarwo",
+        "kelas": "XII TKJ 1"
+    },
+    {
+        "nis": "12003",
+        "nama": "Budi",
+        "kelas": "XII TKJ 2"
+    },
+    {
+        "nis": "12004",
+        "nama": "Candra",
+        "kelas": "XII ACP"
+    },
+    {
+        "nis": "12005",
+        "nama": "Deni",
+        "kelas": "XII AKL"
+    },
+    {
+        "nis": "12006",
+        "nama": "Eko",
+        "kelas": "XII TSM"
+    }
+]

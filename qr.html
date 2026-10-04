@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>QR Siswa - SMK Cibening</title>
+
+    <!-- Library QR Code -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+    </script>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+
+            font-family: Arial, sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6a11cb,
+                    #2575fc
+                );
+
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        #qr-container {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(220px, 1fr)
+                );
+
+            gap: 20px;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+        .student-card {
+
+            background: rgba(
+                255,
+                255,
+                255,
+                0.95
+            );
+
+            border-radius: 20px;
+
+            padding: 20px;
+
+            text-align: center;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.2);
+        }
+
+        .student-card h2 {
+
+            margin: 10px 0 5px;
+
+            font-size: 20px;
+        }
+
+        .student-card p {
+
+            margin: 5px;
+
+            color: #555;
+        }
+
+        .qr {
+
+            display: flex;
+
+            justify-content: center;
+
+            margin: 15px 0;
+        }
+
+        .error {
+
+            text-align: center;
+
+            color: white;
+
+            font-size: 18px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <h1>
+        📱 QR ABSENSI SISWA
+    </h1>
+
+    <p class="description">
+        SMK Cibening
+    </p>
+
+
+    <div id="qr-container">
+
+        <p class="error">
+            Memuat data siswa...
+        </p>
+
+    </div>
+
+
+    <script>
+
+        /* =====================================
+           ELEMENT
+        ===================================== */
+
+        const qrContainer =
+            document.getElementById(
+                "qr-container"
+            );
+
+
+        /* =====================================
+           MEMBACA DATA SISWA
+        ===================================== */
+
+        async function loadStudents() {
+
+            try {
+
+                const response =
+                    await fetch(
+                        "data/students.json"
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        `HTTP ${response.status}`
+                    );
+
+                }
+
+
+                const students =
+                    await response.json();
+
+
+                createQRCodes(students);
+
+
+            } catch (error) {
+
+                console.error(error);
+
+
+                qrContainer.innerHTML = `
+                    <p class="error">
+                        ❌ Gagal membaca
+                        students.json
+                    </p>
+                `;
+
+            }
+
+        }
+
+
+        /* =====================================
+           MEMBUAT QR
+        ===================================== */
+
+        function createQRCodes(students) {
+
+            qrContainer.innerHTML = "";
+
+
+            students.forEach(
+                student => {
+
+                    /* -------------------------
+                       CARD SISWA
+                    ------------------------- */
+
+                    const card =
+                        document.createElement(
+                            "div"
+                        );
+
+                    card.className =
+                        "student-card";
+
+
+                    /* -------------------------
+                       QR CONTAINER
+                    ------------------------- */
+
+                    const qr =
+                        document.createElement(
+                            "div"
+                        );
+
+                    qr.className =
+                        "qr";
+
+
+                    /* -------------------------
+                       NAMA
+                    ------------------------- */
+
+                    const name =
+                        document.createElement(
+                            "h2"
+                        );
+
+                    name.textContent =
+                        student.nama;
+
+
+                    /* -------------------------
+                       NIS
+                    ------------------------- */
+
+                    const nis =
+                        document.createElement(
+                            "p"
+                        );
+
+                    nis.textContent =
+                        `NIS: ${student.nis}`;
+
+
+                    /* -------------------------
+                       KELAS
+                    ------------------------- */
+
+                    const kelas =
+                        document.createElement(
+                            "p"
+                        );
+
+                    kelas.textContent =
+                        student.kelas;
+
+
+                    /* -------------------------
+                       MASUKKAN KE CARD
+                    ------------------------- */
+
+                    card.appendChild(name);
+
+                    card.appendChild(qr);
+
+                    card.appendChild(nis);
+
+                    card.appendChild(kelas);
+
+
+                    qrContainer.appendChild(card);
+
+
+                    /* -------------------------
+                       BUAT QR
+                    ------------------------- */
+
+                    new QRCode(
+                        qr,
+                        {
+                            text: student.nis,
+
+                            width: 180,
+
+                            height: 180,
+
+                            correctLevel:
+                                QRCode.CorrectLevel.H
+                        }
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =====================================
+           JALANKAN PROGRAM
+        ===================================== */
+
+        loadStudents();
+
+    </script>
+
+</body>
+
+</html>

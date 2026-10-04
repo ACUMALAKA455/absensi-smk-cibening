@@ -1,0 +1,4622 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef7ff 0%,
+            #dceeff 45%,
+            #f7fbff 100%
+        );
+
+    color: #102a43;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            #031f3d,
+            #073b6f,
+            #0a4f8a
+        );
+
+    color: white;
+
+    box-shadow:
+        0 8px 30px rgba(0, 45, 90, 0.25);
+
+    overflow: hidden;
+}
+
+.header::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #66c7ff,
+            #ffffff,
+            #66c7ff
+        );
+
+    opacity: 0.8;
+}
+
+.header-container {
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding:
+        18px 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.school-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.school-logo {
+    width: 76px;
+    height: 76px;
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 7px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.22);
+
+    border:
+        2px solid rgba(255, 255, 255, 0.8);
+
+    animation:
+        logoPop 0.8s ease-out;
+}
+
+.school-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.brand-divider {
+    width: 2px;
+    height: 58px;
+
+    background:
+        rgba(255, 255, 255, 0.45);
+
+    animation:
+        dividerGrow 0.8s ease-out;
+}
+
+.school-text {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.school-label {
+    color: #8ed8ff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 4px;
+}
+
+.school-name {
+    color: white;
+
+    font-size: 29px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.title-space {
+    display: inline-block;
+
+    width: 10px;
+}
+
+
+/* =========================================
+   HEADER ANIMATION
+========================================= */
+
+.animated-title span {
+    display: inline-block;
+
+    animation:
+        letterAssemble 0.5s
+        both;
+}
+
+.animated-title span:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.animated-title span:nth-child(2) {
+    animation-delay: 0.10s;
+}
+
+.animated-title span:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.animated-title span:nth-child(4) {
+    animation-delay: 0.20s;
+}
+
+.animated-title span:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.animated-title span:nth-child(6) {
+    animation-delay: 0.30s;
+}
+
+.animated-title span:nth-child(8) {
+    animation-delay: 0.35s;
+}
+
+.animated-title span:nth-child(9) {
+    animation-delay: 0.40s;
+}
+
+.animated-title span:nth-child(10) {
+    animation-delay: 0.45s;
+}
+
+.animated-title span:nth-child(11) {
+    animation-delay: 0.50s;
+}
+
+.animated-title span:nth-child(12) {
+    animation-delay: 0.55s;
+}
+
+.animated-title span:nth-child(13) {
+    animation-delay: 0.60s;
+}
+
+.school-name span {
+    display: inline-block;
+
+    animation:
+        schoolNameAssemble 0.6s
+        both;
+}
+
+.school-name span:nth-child(1) {
+    animation-delay: 0.25s;
+}
+
+.school-name span:nth-child(2) {
+    animation-delay: 0.30s;
+}
+
+.school-name span:nth-child(3) {
+    animation-delay: 0.35s;
+}
+
+.school-name span:nth-child(5) {
+    animation-delay: 0.40s;
+}
+
+.school-name span:nth-child(6) {
+    animation-delay: 0.45s;
+}
+
+.school-name span:nth-child(7) {
+    animation-delay: 0.50s;
+}
+
+.school-name span:nth-child(8) {
+    animation-delay: 0.55s;
+}
+
+.school-name span:nth-child(9) {
+    animation-delay: 0.60s;
+}
+
+.school-name span:nth-child(10) {
+    animation-delay: 0.65s;
+}
+
+.school-name span:nth-child(11) {
+    animation-delay: 0.70s;
+}
+
+.school-name span:nth-child(12) {
+    animation-delay: 0.75s;
+}
+
+
+/* =========================================
+   CLOCK
+========================================= */
+
+.clock-container {
+    animation:
+        clockRollIn 1.1s
+        cubic-bezier(.2, .8, .2, 1);
+}
+
+.analog-clock {
+    position: relative;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #eef8ff 70%,
+            #d4ecff 100%
+        );
+
+    border:
+        4px solid rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+}
+
+.clock-number {
+    position: absolute;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    color: #123d66;
+
+    transform: translate(-50%, -50%);
+}
+
+.number-12 {
+    left: 50%;
+    top: 10%;
+}
+
+.number-1 {
+    left: 72%;
+    top: 16%;
+}
+
+.number-2 {
+    left: 86%;
+    top: 31%;
+}
+
+.number-3 {
+    left: 91%;
+    top: 50%;
+}
+
+.number-4 {
+    left: 86%;
+    top: 69%;
+}
+
+.number-5 {
+    left: 72%;
+    top: 84%;
+}
+
+.number-6 {
+    left: 50%;
+    top: 90%;
+}
+
+.number-7 {
+    left: 28%;
+    top: 84%;
+}
+
+.number-8 {
+    left: 14%;
+    top: 69%;
+}
+
+.number-9 {
+    left: 9%;
+    top: 50%;
+}
+
+.number-10 {
+    left: 14%;
+    top: 31%;
+}
+
+.number-11 {
+    left: 28%;
+    top: 16%;
+}
+
+.clock-hand {
+    position: absolute;
+
+    left: 50%;
+    bottom: 50%;
+
+    transform-origin:
+        50% 100%;
+
+    border-radius: 10px;
+}
+
+.hour-hand {
+    width: 4px;
+    height: 23px;
+
+    background: #123d66;
+}
+
+.minute-hand {
+    width: 3px;
+    height: 31px;
+
+    background: #1769aa;
+}
+
+.second-hand {
+    width: 2px;
+    height: 34px;
+
+    background: #49b8ff;
+}
+
+.clock-center {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #0b4f88;
+
+    border:
+        2px solid white;
+}
+
+@keyframes logoPop {
+    from {
+        opacity: 0;
+        transform:
+            scale(0.5)
+            rotate(-15deg);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            scale(1)
+            rotate(0);
+    }
+}
+
+@keyframes dividerGrow {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+
+    to {
+        height: 58px;
+        opacity: 1;
+    }
+}
+
+@keyframes letterAssemble {
+    from {
+        opacity: 0;
+        transform:
+            translateY(-18px)
+            rotate(-8deg);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+}
+
+@keyframes schoolNameAssemble {
+    from {
+        opacity: 0;
+        transform:
+            translateY(20px)
+            scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes clockRollIn {
+    from {
+        opacity: 0;
+        transform:
+            translateX(120px)
+            rotate(-360deg);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateX(0)
+            rotate(0);
+    }
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.main {
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding:
+        45px 35px 60px;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.attendance-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 28px;
+}
+
+.section-label,
+.card-label {
+    display: block;
+
+    color: #2984c6;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 6px;
+}
+
+.attendance-header h2 {
+    color: #082f55;
+
+    font-size: 32px;
+
+    font-weight: 800;
+
+    margin-bottom: 5px;
+}
+
+.attendance-header p {
+    color: #64809a;
+
+    font-size: 15px;
+}
+
+.system-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        10px 16px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #176c42;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 5px 18px rgba(23, 67, 100, 0.08);
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #21c875;
+
+    box-shadow:
+        0 0 0 5px
+        rgba(33, 200, 117, 0.12);
+
+    animation:
+        statusPulse 1.7s infinite;
+}
+
+@keyframes statusPulse {
+    50% {
+        opacity: 0.45;
+    }
+}
+
+
+/* =========================================
+   SCANNER + RESULT
+========================================= */
+
+.scanner-result-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   CARD UMUM
+========================================= */
+
+.scanner-card,
+.result-card,
+.student-data-card {
+    background: rgba(255, 255, 255, 0.96);
+
+    border:
+        1px solid #dcecf8;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(31, 83, 120, 0.10);
+}
+
+.scanner-card,
+.result-card {
+    padding: 25px;
+}
+
+.scanner-card,
+.result-card,
+.student-data-card {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.scanner-card:hover,
+.result-card:hover,
+.student-data-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 16px 40px
+        rgba(31, 83, 120, 0.14);
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.card-top {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.card-top h3 {
+    color: #103b61;
+
+    font-size: 21px;
+
+    font-weight: 800;
+}
+
+.scanner-status {
+    padding:
+        7px 11px;
+
+    border-radius: 8px;
+
+    background: #e7f5ff;
+
+    color: #1775b7;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.result-icon {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 11px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        #e7f5ff;
+
+    color: #1477ba;
+
+    font-size: 20px;
+
+    font-weight: 900;
+}
+
+
+/* =========================================
+   SCANNER AREA
+========================================= */
+
+.scanner-area {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eaf7ff,
+            #d8efff
+        );
+
+    border:
+        1px solid #c6e7fa;
+}
+
+.scanner-frame {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 430px;
+
+    min-height: 330px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background:
+        #082b4c;
+}
+
+#qr-reader {
+    width: 100% !important;
+
+    max-width: 430px;
+
+    border: none !important;
+
+    color: white;
+}
+
+#qr-reader video {
+    width: 100% !important;
+
+    height: auto !important;
+
+    border-radius: 12px;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   SCANNER FRAME
+========================================= */
+
+.scanner-corner {
+    position: absolute;
+
+    width: 42px;
+    height: 42px;
+
+    border-color: #65caff;
+
+    border-style: solid;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(101, 202, 255, 0.7)
+        );
+}
+
+.top-left {
+    left: 20px;
+    top: 20px;
+
+    border-width:
+        4px 0 0 4px;
+
+    border-radius:
+        10px 0 0 0;
+}
+
+.top-right {
+    right: 20px;
+    top: 20px;
+
+    border-width:
+        4px 4px 0 0;
+
+    border-radius:
+        0 10px 0 0;
+}
+
+.bottom-left {
+    left: 20px;
+    bottom: 20px;
+
+    border-width:
+        0 0 4px 4px;
+
+    border-radius:
+        0 0 0 10px;
+}
+
+.bottom-right {
+    right: 20px;
+    bottom: 20px;
+
+    border-width:
+        0 4px 4px 0;
+
+    border-radius:
+        0 0 10px 0;
+}
+
+.scanner-line {
+    position: absolute;
+
+    left: 10%;
+    right: 10%;
+
+    top: 20%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #61c9ff,
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px #61c9ff;
+
+    z-index: 6;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.scanner-card:has(
+    #qr-reader video
+) .scanner-line {
+    opacity: 1;
+
+    animation:
+        scanLine 2.2s
+        linear infinite;
+}
+
+@keyframes scanLine {
+    0% {
+        top: 20%;
+    }
+
+    50% {
+        top: 80%;
+    }
+
+    100% {
+        top: 20%;
+    }
+}
+
+
+/* =========================================
+   HTML5 QR CODE
+========================================= */
+
+#qr-reader__dashboard {
+    border: none !important;
+}
+
+#qr-reader__dashboard_section {
+    padding: 8px !important;
+}
+
+#qr-reader__dashboard_section_csr button {
+    border: none !important;
+
+    background:
+        #176fb0 !important;
+
+    color: white !important;
+
+    border-radius: 8px !important;
+
+    padding:
+        8px 12px !important;
+
+    font-weight: 700 !important;
+}
+
+#qr-reader__status_span {
+    color: white !important;
+}
+
+
+/* =========================================
+   INSTRUCTION
+========================================= */
+
+.scanner-instruction {
+    text-align: center;
+
+    color: #6b879e;
+
+    font-size: 13px;
+
+    margin:
+        15px 0;
+}
+
+
+/* =========================================
+   SCAN BUTTON
+========================================= */
+
+.scan-button {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 13px;
+
+    padding:
+        15px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0878c9,
+            #0d55a0
+        );
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(13, 91, 160, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+.scan-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(13, 91, 160, 0.32);
+
+    filter: brightness(1.08);
+}
+
+.scan-button:active {
+    transform:
+        translateY(0)
+        scale(0.98);
+}
+
+
+/* =========================================
+   HASIL SCAN
+========================================= */
+
+.attendance-result {
+    min-height: 410px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f7fcff,
+            #edf8ff
+        );
+
+    border:
+        1px solid #d8ecf8;
+}
+
+.result-empty {
+    max-width: 290px;
+
+    text-align: center;
+
+    color: #7690a4;
+}
+
+.empty-icon {
+    width: 70px;
+    height: 70px;
+
+    margin:
+        0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        #dcefff;
+
+    color: #237db9;
+
+    font-weight: 900;
+
+    font-size: 17px;
+
+    letter-spacing: 2px;
+}
+
+.result-empty h4 {
+    color: #315b7d;
+
+    font-size: 18px;
+
+    margin-bottom: 7px;
+}
+
+.result-empty p {
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.result-status {
+    width: 100%;
+
+    color: #254a68;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    display: none;
+}
+
+
+/* =========================================
+   HASIL ABSENSI KETIKA ADA DATA
+========================================= */
+
+.attendance-result:has(
+    .result-status:not(:empty)
+) .result-empty {
+    display: none;
+}
+
+.result-status strong {
+    display: block;
+
+    padding: 10px;
+
+    margin-bottom: 15px;
+
+    border-radius: 10px;
+
+    background: #e8f8ef;
+
+    color: #16834b;
+
+    text-align: center;
+
+    font-size: 15px;
+}
+
+.result-status b {
+    color: #123f63;
+}
+
+
+/* =========================================
+   DATA SISWA
+========================================= */
+
+.student-data-card {
+    padding: 28px;
+}
+
+.student-data-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.student-data-header h3 {
+    color: #103b61;
+
+    font-size: 23px;
+
+    margin-bottom: 5px;
+}
+
+.student-data-header p {
+    color: #70899e;
+
+    font-size: 13px;
+}
+
+.student-total {
+    min-width: 110px;
+
+    padding:
+        12px 18px;
+
+    text-align: center;
+
+    border-radius: 14px;
+
+    background:
+        #edf8ff;
+
+    border:
+        1px solid #d4ecfa;
+}
+
+.student-total span {
+    display: block;
+
+    color: #6d8ba2;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.student-total strong {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #0b5f98;
+
+    font-size: 25px;
+}
+
+
+/* =========================================
+   OVERVIEW
+========================================= */
+
+.attendance-overview {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 28px;
+}
+
+.overview-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    border:
+        1px solid #e0edf5;
+
+    background: #fafdff;
+}
+
+.overview-icon {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 19px;
+
+    font-weight: 900;
+}
+
+.overview-box span {
+    display: block;
+
+    color: #718ba0;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.overview-box strong {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #174667;
+
+    font-size: 25px;
+}
+
+.overview-box.total .overview-icon {
+    background: #e4f3ff;
+    color: #1672ad;
+}
+
+.overview-box.present .overview-icon {
+    background: #e3f8ed;
+    color: #159257;
+}
+
+.overview-box.absent .overview-icon {
+    background: #fff0e2;
+    color: #d8781d;
+}
+
+
+/* =========================================
+   ABSENT SECTION
+========================================= */
+
+.absent-section {
+    border-top:
+        1px solid #e4eef5;
+
+    padding-top: 24px;
+}
+
+.absent-section-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+.absent-section-header h4 {
+    color: #214d6e;
+
+    font-size: 17px;
+
+    margin-bottom: 4px;
+}
+
+.absent-section-header p {
+    color: #7a92a4;
+
+    font-size: 12px;
+}
+
+.absent-badge {
+    padding:
+        8px 13px;
+
+    border-radius: 20px;
+
+    background:
+        #fff3e6;
+
+    color: #b9691a;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.absent-badge span {
+    font-size: 15px;
+
+    font-weight: 900;
+}
+
+
+/* =========================================
+   DAFTAR SISWA
+========================================= */
+
+.absent-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+    max-height: 360px;
+
+    overflow-y: auto;
+
+    padding-right: 5px;
+}
+
+.absent-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.absent-list::-webkit-scrollbar-track {
+    background: #edf5fa;
+
+    border-radius: 10px;
+}
+
+.absent-list::-webkit-scrollbar-thumb {
+    background: #a8cee5;
+
+    border-radius: 10px;
+}
+
+.absent-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 14px;
+
+    border:
+        1px solid #e3edf3;
+
+    border-radius: 12px;
+
+    background: #fbfdff;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.absent-item:hover {
+    transform:
+        translateX(3px);
+
+    border-color:
+        #b9dff3;
+}
+
+.absent-number {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background:
+        #eaf5fb;
+
+    color: #2473a5;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+.absent-info {
+    min-width: 0;
+}
+
+.absent-name {
+    color: #244e6d;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.absent-class {
+    color: #8398a8;
+
+    font-size: 10px;
+
+    margin-top: 3px;
+}
+
+.loading-text {
+    width: 100%;
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: #8198a9;
+
+    font-size: 13px;
+
+    grid-column:
+        1 / -1;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    background:
+        #031f3d;
+
+    color: #b9d7eb;
+
+    padding:
+        20px 35px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    font-size: 12px;
+}
+
+.footer p {
+    font-weight: 700;
+}
+
+.footer span {
+    color: #76bce3;
+}
+
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .header-container {
+        padding:
+            16px 22px;
+    }
+
+    .main {
+        padding:
+            35px 22px 50px;
+    }
+
+    .scanner-result-layout {
+        grid-template-columns:
+            1fr;
+    }
+
+    .attendance-overview {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .absent-list {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .header-container {
+        padding:
+            14px 16px;
+    }
+
+    .school-brand {
+        gap: 10px;
+    }
+
+    .school-logo {
+        width: 57px;
+        height: 57px;
+
+        border-radius: 12px;
+
+        padding: 5px;
+    }
+
+    .brand-divider {
+        height: 43px;
+    }
+
+    .school-label {
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+    .school-name {
+        font-size: 17px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .title-space {
+        width: 5px;
+    }
+
+    .clock-container {
+        display: none;
+    }
+
+    .main {
+        padding:
+            28px 14px 40px;
+    }
+
+    .attendance-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        margin-bottom: 20px;
+    }
+
+    .attendance-header h2 {
+        font-size: 26px;
+    }
+
+    .system-status {
+        align-self: flex-start;
+    }
+
+    .scanner-card,
+    .result-card,
+    .student-data-card {
+        padding: 18px;
+
+        border-radius: 17px;
+    }
+
+    .card-top h3 {
+        font-size: 18px;
+    }
+
+    .scanner-frame {
+        min-height: 270px;
+    }
+
+    .attendance-result {
+        min-height: 300px;
+    }
+
+    .student-data-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .student-total {
+        width: 100%;
+    }
+
+    .attendance-overview {
+        grid-template-columns:
+            1fr;
+    }
+
+    .absent-list {
+        grid-template-columns:
+            1fr;
+    }
+
+    .absent-section-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .footer {
+        flex-direction: column;
+
+        padding:
+            18px 15px;
+
+        gap: 5px;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .school-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .school-name {
+        font-size: 14px;
+    }
+
+    .school-label {
+        font-size: 7px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .scanner-card,
+    .result-card,
+    .student-data-card {
+        padding: 14px;
+    }
+
+    .scanner-frame {
+        min-height: 230px;
+    }
+
+    .scanner-corner {
+        width: 30px;
+        height: 30px;
+    }
+}
+/* =========================================
+   DATABASE DATA SISWA
+========================================= */
+
+.student-filter {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-group label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #64748b;
+}
+
+.filter-group select,
+.search-box input {
+    width: 100%;
+    height: 48px;
+    border: 1px solid #dbe4f0;
+    border-radius: 12px;
+    background: #f8fbff;
+    color: #0f172a;
+    font-size: 14px;
+    font-weight: 600;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.filter-group select {
+    padding: 0 14px;
+    cursor: pointer;
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    padding: 0 44px 0 42px;
+}
+
+.filter-group select:focus,
+.search-box input:focus {
+    border-color: #2563eb;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.10);
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: #64748b;
+    pointer-events: none;
+}
+
+.clear-search {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 30px;
+    height: 30px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #64748b;
+
+    font-size: 20px;
+    cursor: pointer;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.2s ease;
+}
+
+.clear-search.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.clear-search:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+
+/* INFORMASI HASIL */
+
+.student-result-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 22px;
+    padding: 14px 16px;
+
+    border-radius: 12px;
+    background: #f1f5f9;
+
+    color: #64748b;
+    font-size: 13px;
+}
+
+.student-result-count {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.student-result-count strong {
+    color: #2563eb;
+    font-size: 16px;
+}
+
+
+/* TABEL */
+
+.student-table-wrapper {
+    margin-top: 18px;
+    overflow-x: auto;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+}
+
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+.student-table thead {
+    background: #0f2a5f;
+}
+
+.student-table th {
+    padding: 15px 18px;
+
+    text-align: left;
+
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+.student-table td {
+    padding: 15px 18px;
+
+    border-top: 1px solid #edf2f7;
+
+    color: #334155;
+    font-size: 14px;
+}
+
+.student-table tbody tr {
+    background: #ffffff;
+    transition: 0.15s ease;
+}
+
+.student-table tbody tr:hover {
+    background: #f8fbff;
+}
+
+.student-table td:first-child {
+    width: 70px;
+    color: #94a3b8;
+    font-weight: 700;
+}
+
+.student-table td:nth-child(2) {
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.student-table td:nth-child(3) {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.student-table td:nth-child(4) {
+    font-weight: 600;
+    color: #475569;
+}
+
+
+/* LOADING */
+
+.student-loading {
+    text-align: center !important;
+    padding: 35px !important;
+    color: #64748b !important;
+}
+
+
+/* TIDAK DITEMUKAN */
+
+.student-not-found {
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.not-found-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.student-not-found h4 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 17px;
+}
+
+.student-not-found p {
+    margin: 8px auto 0;
+    max-width: 420px;
+
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .student-filter {
+        grid-template-columns: 1fr;
+    }
+
+    .student-result-info {
+        align-items: flex-start;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+}
+/* =========================================
+   QR SCANNER MODERN
+========================================= */
+
+.scanner-card {
+    position: relative;
+    overflow: hidden;
+
+    border: 1px solid rgba(37, 99, 235, 0.12);
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(37, 99, 235, 0.08),
+            transparent 45%
+        ),
+        #ffffff;
+
+    box-shadow:
+        0 15px 40px rgba(15, 42, 95, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.scanner-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 20px 50px rgba(15, 42, 95, 0.12);
+}
+
+
+/* =========================================
+   STATUS SCANNER
+========================================= */
+
+.scanner-status {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 7px 12px;
+
+    border-radius: 999px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+
+    transition: 0.3s ease;
+}
+
+.scanner-status::before {
+    content: "";
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    box-shadow:
+        0 0 0 0 rgba(37, 99, 235, 0.4);
+
+    animation: scannerStatusPulse 2s infinite;
+}
+
+@keyframes scannerStatusPulse {
+
+    0% {
+        box-shadow:
+            0 0 0 0 rgba(37, 99, 235, 0.4);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 7px rgba(37, 99, 235, 0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(37, 99, 235, 0);
+    }
+
+}
+
+
+/* =========================================
+   AREA KAMERA
+========================================= */
+
+.scanner-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 28px 20px 18px;
+}
+
+
+/* =========================================
+   FRAME SCANNER
+========================================= */
+
+.scanner-frame {
+    position: relative;
+
+    width: min(100%, 390px);
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #102d63 0%,
+            #071a3d 70%,
+            #041329 100%
+        );
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 15px 40px rgba(4, 19, 41, 0.25);
+}
+
+
+/* =========================================
+   QR READER
+========================================= */
+
+#qr-reader {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: none !important;
+
+    overflow: hidden;
+}
+
+#qr-reader video {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover;
+
+    border-radius: 22px;
+
+    opacity: 0.9;
+}
+
+#qr-reader__dashboard {
+    display: none !important;
+}
+
+#qr-reader img {
+    display: none !important;
+}
+
+
+/* =========================================
+   OVERLAY SCANNER
+========================================= */
+
+.scanner-frame::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            rgba(3, 15, 35, 0.12),
+            rgba(3, 15, 35, 0.12)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   SUDUT SCANNER
+========================================= */
+
+.scanner-corner {
+    position: absolute;
+
+    z-index: 5;
+
+    width: 42px;
+    height: 42px;
+
+    border-color: #60a5fa;
+    border-style: solid;
+
+    filter:
+        drop-shadow(0 0 5px rgba(96, 165, 250, 0.8));
+
+    animation: cornerPulse 2s ease-in-out infinite;
+}
+
+.top-left {
+    top: 22px;
+    left: 22px;
+
+    border-width: 4px 0 0 4px;
+
+    border-radius: 12px 0 0 0;
+}
+
+.top-right {
+    top: 22px;
+    right: 22px;
+
+    border-width: 4px 4px 0 0;
+
+    border-radius: 0 12px 0 0;
+}
+
+.bottom-left {
+    bottom: 22px;
+    left: 22px;
+
+    border-width: 0 0 4px 4px;
+
+    border-radius: 0 0 0 12px;
+}
+
+.bottom-right {
+    right: 22px;
+    bottom: 22px;
+
+    border-width: 0 4px 4px 0;
+
+    border-radius: 0 0 12px 0;
+}
+
+@keyframes cornerPulse {
+
+    0%,
+    100% {
+        opacity: 0.65;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.06);
+    }
+
+}
+
+
+/* =========================================
+   GARIS SCAN
+========================================= */
+
+.scanner-line {
+    position: absolute;
+
+    z-index: 6;
+
+    left: 12%;
+    right: 12%;
+
+    height: 3px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #60a5fa,
+            #dbeafe,
+            #60a5fa,
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px #60a5fa,
+        0 0 20px rgba(96, 165, 250, 0.7);
+
+    animation: scannerLineMove 2.4s ease-in-out infinite;
+}
+
+@keyframes scannerLineMove {
+
+    0% {
+        top: 14%;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        top: 82%;
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 14%;
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================
+   TEKS SCANNER
+========================================= */
+
+.scanner-instruction {
+    margin: 5px 0 18px;
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================
+   TOMBOL SCAN
+========================================= */
+
+.scan-button {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    width: calc(100% - 40px);
+    height: 52px;
+
+    margin: 0 20px 22px;
+
+    border: none;
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.25);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.scan-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+        );
+
+    transition: 0.5s ease;
+}
+
+.scan-button:hover::before {
+    left: 100%;
+}
+
+.scan-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(37, 99, 235, 0.35);
+}
+
+.scan-button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================
+   HASIL SCAN
+========================================= */
+
+.result-card {
+    overflow: hidden;
+
+    border: 1px solid rgba(37, 99, 235, 0.10);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 15px 40px rgba(15, 42, 95, 0.08);
+}
+
+.attendance-result {
+    min-height: 380px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    animation: resultAppear 0.45s ease;
+}
+
+@keyframes resultAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   EMPTY RESULT
+========================================= */
+
+.result-empty {
+    text-align: center;
+
+    max-width: 280px;
+}
+
+.empty-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 20px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 17px;
+    font-weight: 900;
+
+    box-shadow:
+        0 0 0 8px rgba(37, 99, 235, 0.04);
+
+    animation: emptyFloat 3s ease-in-out infinite;
+}
+
+@keyframes emptyFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+}
+
+.result-empty h4 {
+    margin: 0 0 7px;
+
+    color: #0f172a;
+
+    font-size: 17px;
+}
+
+.result-empty p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .scanner-area {
+        padding: 20px 14px 15px;
+    }
+
+    .scanner-frame {
+        border-radius: 18px;
+    }
+
+    #qr-reader video {
+        border-radius: 18px;
+    }
+
+    .scanner-corner {
+        width: 34px;
+        height: 34px;
+    }
+
+    .top-left,
+    .top-right {
+        top: 18px;
+    }
+
+    .bottom-left,
+    .bottom-right {
+        bottom: 18px;
+    }
+
+    .top-left,
+    .bottom-left {
+        left: 18px;
+    }
+
+    .top-right,
+    .bottom-right {
+        right: 18px;
+    }
+
+    .scan-button {
+        width: calc(100% - 28px);
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+
+}
+/* =========================================
+   ANIMASI HASIL SCAN
+========================================= */
+
+.scan-success-animation {
+    width: 100%;
+    animation: scanResultEnter 0.55s cubic-bezier(.22, 1, .36, 1);
+}
+
+@keyframes scanResultEnter {
+
+    0% {
+        opacity: 0;
+        transform: translateY(25px) scale(0.94);
+        filter: blur(4px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(-4px) scale(1.01);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================================
+   IKON SUKSES
+========================================= */
+
+.scan-success-icon {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 76px;
+    height: 76px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #ecfdf5;
+
+    color: #16a34a;
+
+    font-size: 32px;
+    font-weight: 900;
+
+    animation: successIcon 0.55s cubic-bezier(.22, 1, .36, 1);
+}
+
+@keyframes successIcon {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* Lingkaran efek sukses */
+
+.scan-success-icon::before,
+.scan-success-icon::after {
+    content: "";
+
+    position: absolute;
+
+    inset: -8px;
+
+    border: 2px solid rgba(22, 163, 74, 0.25);
+
+    border-radius: 50%;
+
+    animation: successRing 1.4s ease-out infinite;
+}
+
+.scan-success-icon::after {
+    animation-delay: 0.35s;
+}
+
+@keyframes successRing {
+
+    0% {
+        opacity: 0.8;
+        transform: scale(0.75);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.35);
+    }
+
+}
+
+
+/* =========================================
+   JUDUL SUKSES
+========================================= */
+
+.scan-success-title {
+    margin: 0;
+
+    color: #15803d;
+
+    font-size: 19px;
+    font-weight: 900;
+
+    text-align: center;
+
+    animation: successText 0.5s ease 0.15s both;
+}
+
+.scan-success-subtitle {
+    margin: 7px 0 22px;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    text-align: center;
+
+    animation: successText 0.5s ease 0.22s both;
+}
+
+@keyframes successText {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   DATA SISWA HASIL SCAN
+========================================= */
+
+.scan-student-info {
+    overflow: hidden;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    background: #f8fafc;
+
+    animation: studentInfoEnter 0.5s ease 0.28s both;
+}
+
+@keyframes studentInfoEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.scan-student-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 13px 16px;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.scan-student-row:last-child {
+    border-bottom: none;
+}
+
+.scan-student-label {
+    color: #94a3b8;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+}
+
+.scan-student-value {
+    color: #0f172a;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    text-align: right;
+}
+
+.scan-student-value.primary {
+    color: #2563eb;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   STATUS ABSENSI
+========================================= */
+
+.scan-attendance-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+
+    margin-top: 15px;
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    animation: statusPop 0.45s ease 0.45s both;
+}
+
+@keyframes statusPop {
+
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================
+   DUPLIKAT ABSENSI
+========================================= */
+
+.scan-duplicate-animation {
+    width: 100%;
+
+    animation: scanResultEnter 0.5s cubic-bezier(.22, 1, .36, 1);
+}
+
+.scan-duplicate-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 76px;
+    height: 76px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #fff7ed;
+
+    color: #ea580c;
+
+    font-size: 30px;
+    font-weight: 900;
+
+    animation: successIcon 0.55s cubic-bezier(.22, 1, .36, 1);
+}
+
+
+/* =========================================
+   SISWA TIDAK DITEMUKAN
+========================================= */
+
+.scan-error-animation {
+    width: 100%;
+
+    animation: scanResultEnter 0.5s cubic-bezier(.22, 1, .36, 1);
+}
+
+.scan-error-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 76px;
+    height: 76px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #fef2f2;
+
+    color: #dc2626;
+
+    font-size: 30px;
+    font-weight: 900;
+
+    animation: successIcon 0.55s cubic-bezier(.22, 1, .36, 1);
+}
+/* =========================================
+   STAGGER ANIMATION
+   SEMUA ELEMEN HASIL SCAN
+========================================= */
+
+/* Container utama */
+.scan-success-animation,
+.scan-duplicate-animation,
+.scan-error-animation {
+    width: 100%;
+
+    animation:
+        resultContainerEnter
+        0.5s
+        cubic-bezier(.22, 1, .36, 1)
+        both;
+}
+
+@keyframes resultContainerEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.scan-success-icon,
+.scan-duplicate-icon,
+.scan-error-icon {
+
+    animation:
+        resultIconEnter
+        0.65s
+        cubic-bezier(.34, 1.56, .64, 1)
+        0.08s
+        both;
+}
+
+@keyframes resultIconEnter {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.2) rotate(-20deg);
+    }
+
+    65% {
+        opacity: 1;
+        transform: scale(1.12) rotate(4deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+
+}
+
+
+/* =========================================
+   JUDUL
+========================================= */
+
+.scan-success-title {
+
+    animation:
+        resultTitleEnter
+        0.55s
+        ease
+        0.22s
+        both;
+}
+
+@keyframes resultTitleEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+        filter: blur(3px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+
+}
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.scan-success-subtitle {
+
+    animation:
+        resultSubtitleEnter
+        0.5s
+        ease
+        0.32s
+        both;
+}
+
+@keyframes resultSubtitleEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   BOX DATA SISWA
+========================================= */
+
+.scan-student-info {
+
+    animation:
+        studentBoxEnter
+        0.55s
+        cubic-bezier(.22, 1, .36, 1)
+        0.40s
+        both;
+}
+
+@keyframes studentBoxEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================================
+   SETIAP BARIS DATA
+========================================= */
+
+.scan-student-row {
+
+    animation:
+        studentRowEnter
+        0.45s
+        ease
+        both;
+}
+
+
+/* Nama */
+.scan-student-row:nth-child(1) {
+
+    animation-delay: 0.52s;
+
+}
+
+
+/* NIS */
+.scan-student-row:nth-child(2) {
+
+    animation-delay: 0.62s;
+
+}
+
+
+/* Kelas */
+.scan-student-row:nth-child(3) {
+
+    animation-delay: 0.72s;
+
+}
+
+
+@keyframes studentRowEnter {
+
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================================
+   LABEL DATA
+========================================= */
+
+.scan-student-label {
+
+    animation:
+        labelEnter
+        0.4s
+        ease
+        both;
+}
+
+@keyframes labelEnter {
+
+    from {
+        opacity: 0;
+        transform: translateX(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================================
+   NILAI DATA
+========================================= */
+
+.scan-student-value {
+
+    animation:
+        valueEnter
+        0.45s
+        ease
+        both;
+}
+
+@keyframes valueEnter {
+
+    from {
+        opacity: 0;
+        transform: translateX(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================================
+   STATUS KEHADIRAN
+========================================= */
+
+.scan-attendance-status {
+
+    animation:
+        attendanceStatusEnter
+        0.55s
+        cubic-bezier(.34, 1.56, .64, 1)
+        0.86s
+        both;
+}
+
+@keyframes attendanceStatusEnter {
+
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.9);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateY(-2px) scale(1.03);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================================
+   CHECKMARK STATUS
+========================================= */
+
+.scan-attendance-status span:first-child {
+
+    display: inline-flex;
+
+    animation:
+        statusCheck
+        0.45s
+        cubic-bezier(.34, 1.56, .64, 1)
+        1.05s
+        both;
+}
+
+@keyframes statusCheck {
+
+    from {
+        opacity: 0;
+        transform: scale(0) rotate(-90deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+
+}
+
+
+/* =========================================
+   HOVER DATA SISWA
+========================================= */
+
+.scan-student-row {
+    transition:
+        background 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+.scan-student-row:hover {
+    background: rgba(37, 99, 235, 0.04);
+    padding-left: 20px;
+}
+
+
+/* =========================================
+   SUCCESS GLOW
+========================================= */
+
+.scan-success-icon {
+    box-shadow:
+        0 0 0 8px rgba(22, 163, 74, 0.05),
+        0 8px 25px rgba(22, 163, 74, 0.12);
+}
+
+
+/* =========================================
+   DUPLICATE GLOW
+========================================= */
+
+.scan-duplicate-icon {
+    box-shadow:
+        0 0 0 8px rgba(234, 88, 12, 0.05),
+        0 8px 25px rgba(234, 88, 12, 0.12);
+}
+
+
+/* =========================================
+   ERROR GLOW
+========================================= */
+
+.scan-error-icon {
+    box-shadow:
+        0 0 0 8px rgba(220, 38, 38, 0.05),
+        0 8px 25px rgba(220, 38, 38, 0.12);
+}
+/* =========================================
+   ANIMASI MAIN
+========================================= */
+
+.main {
+    animation:
+        mainEnter
+        0.7s
+        cubic-bezier(.22, 1, .36, 1)
+        both;
+}
+
+@keyframes mainEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   HEADER ABSENSI
+========================================= */
+
+.attendance-header {
+    animation:
+        sectionEnter
+        0.6s
+        ease
+        0.15s
+        both;
+}
+
+
+/* =========================================
+   SCANNER + HASIL
+========================================= */
+
+.scanner-result-layout {
+    animation:
+        sectionEnter
+        0.65s
+        cubic-bezier(.22, 1, .36, 1)
+        0.28s
+        both;
+}
+
+
+/* Scanner kiri */
+
+.scanner-card {
+    animation:
+        cardEnter
+        0.65s
+        cubic-bezier(.22, 1, .36, 1)
+        0.35s
+        both;
+}
+
+
+/* Hasil kanan */
+
+.result-card {
+    animation:
+        cardEnter
+        0.65s
+        cubic-bezier(.22, 1, .36, 1)
+        0.45s
+        both;
+}
+
+
+/* =========================================
+   DATA SISWA
+========================================= */
+
+.student-data-card {
+    animation:
+        cardEnter
+        0.7s
+        cubic-bezier(.22, 1, .36, 1)
+        0.55s
+        both;
+}
+
+
+/* =========================================
+   ANIMASI SECTION
+========================================= */
+
+@keyframes sectionEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   ANIMASI CARD
+========================================= */
+
+@keyframes cardEnter {
+
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateY(-3px) scale(1.005);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================================
+   HEADER ELEMENT
+========================================= */
+
+.attendance-header .section-label {
+    animation:
+        fadeSlideLeft
+        0.5s
+        ease
+        0.2s
+        both;
+}
+
+.attendance-header h2 {
+    animation:
+        fadeSlideLeft
+        0.55s
+        ease
+        0.28s
+        both;
+}
+
+.attendance-header p {
+    animation:
+        fadeSlideLeft
+        0.5s
+        ease
+        0.36s
+        both;
+}
+
+.system-status {
+    animation:
+        fadeSlideRight
+        0.55s
+        ease
+        0.4s
+        both;
+}
+
+
+@keyframes fadeSlideLeft {
+
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes fadeSlideRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.scanner-card .card-top,
+.result-card .card-top,
+.student-data-card .student-data-header {
+
+    animation:
+        fadeSlideUp
+        0.5s
+        ease
+        0.5s
+        both;
+}
+
+
+@keyframes fadeSlideUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .main {
+        animation-duration: 0.5s;
+    }
+
+    .scanner-result-layout {
+        animation-delay: 0.15s;
+    }
+
+    .student-data-card {
+        animation-delay: 0.3s;
+    }
+
+}
+/* =========================================
+   ATTENDANCE OVERVIEW
+========================================= */
+
+.attendance-overview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+
+.overview-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 8px 20px rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.overview-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 28px rgba(15, 23, 42, 0.09);
+}
+
+
+.overview-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    font-size: 20px;
+    font-weight: 900;
+}
+
+
+.overview-card.total .overview-icon {
+    background: #e0f2fe;
+    color: #0284c7;
+}
+
+
+.overview-card.present .overview-icon {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+
+.overview-card.absent .overview-icon {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+
+.overview-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+.overview-content span {
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: #64748b;
+}
+
+
+.overview-content strong {
+    font-size: 28px;
+    line-height: 1;
+
+    color: #123b63;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .attendance-overview {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================================
+   BELUM ABSEN PANEL
+========================================= */
+
+.absent-students-panel {
+    margin-top: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+
+.absent-panel-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 24px;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+.absent-panel-header h3 {
+    margin: 5px 0 4px;
+
+    color: #123b63;
+
+    font-size: 21px;
+}
+
+
+.absent-panel-header p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+.absent-total {
+    min-width: 70px;
+
+    padding: 12px 16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #fee2e2;
+
+    border: 1px solid #fecaca;
+}
+
+
+.absent-total strong {
+    color: #dc2626;
+
+    font-size: 25px;
+
+    line-height: 1;
+}
+
+
+.absent-total span {
+    margin-top: 4px;
+
+    color: #ef4444;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   ABSENT TABLE
+========================================= */
+
+.absent-list-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+.absent-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 600px;
+}
+
+
+.absent-table th {
+    padding: 13px 18px;
+
+    background: #f8fafc;
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+.absent-table td {
+    padding: 14px 18px;
+
+    color: #334155;
+
+    font-size: 13px;
+
+    border-bottom: 1px solid #f1f5f9;
+}
+
+
+.absent-table tbody tr {
+    transition:
+        background 0.2s ease;
+}
+
+
+.absent-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+
+.absent-table td:first-child {
+    width: 60px;
+
+    color: #94a3b8;
+
+    font-weight: 700;
+}
+
+
+.absent-table td:nth-child(2) {
+    font-weight: 700;
+
+    color: #475569;
+}
+
+
+.absent-table td:nth-child(3) {
+    font-weight: 700;
+
+    color: #123b63;
+}
+
+
+.absent-table td:nth-child(4) {
+    color: #64748b;
+}
+
+
+.absent-loading {
+    text-align: center !important;
+
+    padding: 30px !important;
+
+    color: #94a3b8 !important;
+}
+
+
+/* =========================================
+   SEMUA SUDAH HADIR
+========================================= */
+
+.all-present-message {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 22px 24px;
+
+    background: #f0fdf4;
+
+    border-top: 1px solid #dcfce7;
+}
+
+
+.all-present-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #dcfce7;
+
+    color: #16a34a;
+
+    font-size: 20px;
+
+    font-weight: 900;
+}
+
+
+.all-present-message strong {
+    color: #166534;
+
+    font-size: 14px;
+}
+
+
+.all-present-message p {
+    margin: 3px 0 0;
+
+    color: #4d7c5b;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .absent-panel-header {
+        padding: 18px;
+    }
+
+
+    .absent-panel-header h3 {
+        font-size: 18px;
+    }
+
+
+    .absent-total {
+        min-width: 60px;
+
+        padding: 10px;
+    }
+
+}
+/* =========================================================
+   MODERN DASHBOARD POLISH
+========================================================= */
+
+:root {
+    --blue-dark: #0f2f50;
+    --blue-main: #1769aa;
+    --blue-light: #eaf4ff;
+    --text-main: #17324d;
+    --text-soft: #64748b;
+    --border-soft: #e5edf5;
+    --surface: #ffffff;
+    --surface-soft: #f7faff;
+}
+
+
+/* =========================================================
+   STUDENT DATA CARD
+========================================================= */
+
+.student-data-card {
+    position: relative;
+    overflow: hidden;
+
+    border: 1px solid var(--border-soft);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #fbfdff 100%
+        );
+
+    box-shadow:
+        0 12px 35px rgba(15, 47, 80, 0.07);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.student-data-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0f4c81,
+            #1687d9,
+            #65c7ff
+        );
+}
+
+.student-data-card:hover {
+    box-shadow:
+        0 18px 45px rgba(15, 47, 80, 0.10);
+}
+
+
+/* =========================================================
+   STATISTICS CARDS
+========================================================= */
+
+.attendance-overview {
+    position: relative;
+
+    margin-top: 8px;
+    margin-bottom: 30px;
+
+    gap: 18px;
+}
+
+
+.overview-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 94px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f8fbff
+        );
+
+    border: 1px solid #e4edf6;
+
+    box-shadow:
+        0 8px 24px rgba(15, 47, 80, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.overview-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    right: -35px;
+    bottom: -45px;
+
+    border-radius: 50%;
+
+    background: rgba(23, 105, 170, 0.04);
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.overview-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 16px 32px rgba(15, 47, 80, 0.10);
+
+    border-color: #d3e4f3;
+}
+
+
+.overview-card:hover::after {
+    transform: scale(1.5);
+}
+
+
+.overview-icon {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.6);
+
+    font-size: 21px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.overview-card:hover .overview-icon {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+
+.overview-content span {
+    font-size: 10px;
+
+    letter-spacing: 1.2px;
+
+    color: #7a8da3;
+}
+
+
+.overview-content strong {
+    font-size: 30px;
+
+    color: var(--blue-dark);
+
+    letter-spacing: -0.5px;
+}
+
+
+/* TOTAL */
+
+.overview-card.total {
+    border-left: 4px solid #0284c7;
+}
+
+
+/* HADIR */
+
+.overview-card.present {
+    border-left: 4px solid #16a34a;
+}
+
+
+/* BELUM ABSEN */
+
+.overview-card.absent {
+    border-left: 4px solid #dc2626;
+}
+
+
+/* =========================================================
+   ABSENT PANEL
+========================================================= */
+
+.absent-students-panel {
+    position: relative;
+
+    margin-top: 24px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fbfdff
+        );
+
+    border: 1px solid var(--border-soft);
+
+    box-shadow:
+        0 12px 35px rgba(15, 47, 80, 0.06);
+
+    transition:
+        box-shadow 0.3s ease;
+}
+
+
+.absent-students-panel:hover {
+    box-shadow:
+        0 18px 42px rgba(15, 47, 80, 0.09);
+}
+
+
+.absent-students-panel::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #dc2626,
+            #ef4444,
+            #fca5a5
+        );
+}
+
+
+/* =========================================================
+   ABSENT HEADER
+========================================================= */
+
+.absent-panel-header {
+    padding: 26px 28px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #fbfdff
+        );
+}
+
+
+.absent-panel-header h3 {
+    margin-top: 6px;
+
+    font-size: 22px;
+
+    letter-spacing: -0.3px;
+
+    color: var(--blue-dark);
+}
+
+
+.absent-panel-header p {
+    margin-top: 6px;
+
+    color: #718096;
+
+    line-height: 1.5;
+}
+
+
+.absent-total {
+    min-width: 76px;
+
+    padding: 13px 15px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff5f5,
+            #fee2e2
+        );
+
+    border: 1px solid #fecaca;
+
+    box-shadow:
+        0 5px 15px rgba(220, 38, 38, 0.08);
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.absent-total:hover {
+    transform: scale(1.04);
+}
+
+
+.absent-total strong {
+    font-size: 28px;
+
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   ABSENT TABLE
+========================================================= */
+
+.absent-list-wrapper {
+    padding: 0 12px 12px;
+}
+
+
+.absent-table {
+    border-collapse: separate;
+    border-spacing: 0;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+}
+
+
+.absent-table th {
+    padding: 14px 18px;
+
+    background: #f4f8fc;
+
+    color: #718096;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    border-bottom: 1px solid #e3ebf3;
+}
+
+
+.absent-table td {
+    padding: 15px 18px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #eef3f7;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.absent-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+.absent-table tbody tr:hover td {
+    background: #f7fbff;
+}
+
+
+.absent-table td:first-child {
+    color: #a0aec0;
+
+    font-size: 12px;
+}
+
+
+.absent-table td:nth-child(2) {
+    color: #64748b;
+
+    font-family: monospace;
+
+    letter-spacing: 0.5px;
+}
+
+
+.absent-table td:nth-child(3) {
+    color: var(--blue-dark);
+
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   MAIN STUDENT TABLE
+========================================================= */
+
+.student-table-wrapper {
+    border: 1px solid #e4edf5;
+
+    border-radius: 14px;
+
+    overflow: auto;
+
+    box-shadow:
+        0 4px 15px rgba(15, 47, 80, 0.03);
+}
+
+
+.student-table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+
+.student-table thead th {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 2;
+
+    padding: 14px 16px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f5f9fd,
+            #edf4fa
+        );
+
+    color: #61778d;
+
+    font-size: 10px;
+
+    letter-spacing: 0.8px;
+
+    border-bottom: 1px solid #dce7f0;
+}
+
+
+.student-table tbody td {
+    padding: 14px 16px;
+
+    border-bottom: 1px solid #edf2f7;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.student-table tbody tr:hover td {
+    background: #f8fbff;
+}
+
+
+/* =========================================================
+   STATUS BADGE
+========================================================= */
+
+.attendance-badge {
+    position: relative;
+
+    padding: 6px 11px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.6px;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.45);
+}
+
+
+.attendance-badge.present {
+    background: #dcfce7;
+
+    color: #15803d;
+
+    border: 1px solid #bbf7d0;
+}
+
+
+.attendance-badge.present::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 6px;
+    height: 6px;
+
+    margin-right: 5px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 0 3px rgba(34,197,94,0.10);
+}
+
+
+.attendance-badge.absent {
+    background: #fee2e2;
+
+    color: #b91c1c;
+
+    border: 1px solid #fecaca;
+}
+
+
+.attendance-badge.absent::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 6px;
+    height: 6px;
+
+    margin-right: 5px;
+
+    border-radius: 50%;
+
+    background: #ef4444;
+}
+
+
+/* =========================================================
+   SEARCH / FILTER
+========================================================= */
+
+.student-filter {
+    padding: 18px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8fbff,
+            #f2f7fc
+        );
+
+    border: 1px solid #e4edf5;
+}
+
+
+.student-filter select,
+.student-filter input {
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.student-filter select:focus,
+.student-filter input:focus {
+    outline: none;
+
+    border-color: #4da3dc;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(23, 105, 170, 0.08);
+}
+
+
+/* =========================================================
+   ALL PRESENT
+========================================================= */
+
+.all-present-message {
+    margin: 12px;
+
+    border-radius: 14px;
+
+    border: 1px solid #bbf7d0;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f0fdf4,
+            #ecfdf5
+        );
+
+    box-shadow:
+        0 5px 18px rgba(22, 163, 74, 0.05);
+}
+
+
+.all-present-icon {
+    box-shadow:
+        0 4px 12px rgba(22, 163, 74, 0.12);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .attendance-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .overview-card {
+        min-height: 82px;
+    }
+
+    .overview-content strong {
+        font-size: 26px;
+    }
+
+    .absent-panel-header {
+        padding: 20px;
+    }
+
+    .absent-panel-header h3 {
+        font-size: 19px;
+    }
+
+    .absent-list-wrapper {
+        padding: 0 6px 6px;
+    }
+
+}
