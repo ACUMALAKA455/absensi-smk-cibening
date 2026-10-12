@@ -33,7 +33,60 @@
     <!-- =====================================
         HEADER
     ====================================== -->
-
+    <!-- POPUP SELAMAT DATANG -->
+    <div
+        id="welcomeModal"
+        class="welcome-overlay"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="welcomeTitle"
+        aria-describedby="welcomeMessage"
+        hidden
+    >
+        <div class="welcome-popup">
+    
+            <button
+                type="button"
+                id="welcomeClose"
+                class="welcome-close"
+                aria-label="Tutup notifikasi"
+            >
+                &times;
+            </button>
+    
+            <div class="welcome-icon" aria-hidden="true">
+                👋
+            </div>
+    
+            <p class="welcome-label">
+                SISTEM ABSENSI DIGITAL
+            </p>
+    
+            <h2 id="welcomeTitle">
+                Selamat Datang!
+            </h2>
+    
+            <p id="welcomeMessage" class="welcome-message">
+                Selamat datang di Sistem Absensi SMK Cibening.
+                Silakan lakukan absensi dengan memindai QR Code
+                yang telah disediakan.
+            </p>
+    
+            <button
+                type="button"
+                id="welcomeStart"
+                class="welcome-start"
+            >
+                Mulai Absensi
+                <span aria-hidden="true">&rarr;</span>
+            </button>
+    
+            <p class="welcome-footer">
+                SMK Cibening · Absensi Digital
+            </p>
+    
+        </div>
+    </div>
     <header class="header">
 
         <div class="header-container">
