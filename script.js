@@ -1151,3 +1151,85 @@ function escapeHTML(value) {
         .replace(/'/g, "&#039;");
 
 }
+/* =====================================
+   NOTIFIKASI SELAMAT DATANG
+===================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const welcomeModal = document.getElementById("welcomeModal");
+    const welcomeClose = document.getElementById("welcomeClose");
+    const welcomeStart = document.getElementById("welcomeStart");
+
+    // Pastikan elemen popup tersedia
+    if (!welcomeModal || !welcomeClose || !welcomeStart) {
+        return;
+    }
+
+    const storageKey = "cibeningWelcomeShown";
+
+    // Cek apakah popup sudah ditampilkan
+    try {
+        if (sessionStorage.getItem(storageKey) === "true") {
+            return;
+        }
+
+        // Simpan status agar tidak muncul lagi pada sesi ini
+        sessionStorage.setItem(storageKey, "true");
+
+    } catch (error) {
+        console.warn(
+            "Penyimpanan sesi tidak tersedia:",
+            error
+        );
+    }
+
+    // Tampilkan popup
+    welcomeModal.hidden = false;
+
+    // Arahkan fokus ke tombol tutup
+    welcomeClose.focus();
+
+    // Fungsi untuk menutup popup
+    function closeWelcomeModal() {
+        welcomeModal.hidden = true;
+    }
+
+    // Tombol tutup
+    welcomeClose.addEventListener(
+        "click",
+        closeWelcomeModal
+    );
+
+    // Tombol mulai absensi
+    welcomeStart.addEventListener("click", function () {
+        closeWelcomeModal();
+
+        const scanner = document.getElementById("qr-reader");
+
+        if (scanner) {
+            scanner.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }
+    });
+
+    // Tutup jika pengunjung mengeklik latar gelap
+    welcomeModal.addEventListener("click", function (event) {
+        if (event.target === welcomeModal) {
+            closeWelcomeModal();
+        }
+    });
+
+    // Tutup dengan tombol Escape
+    document.addEventListener("keydown", function (event) {
+        if (
+            event.key === "Escape" &&
+            !welcomeModal.hidden
+        ) {
+            closeWelcomeModal();
+        }
+    });
+
+});
